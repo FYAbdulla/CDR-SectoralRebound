@@ -1,8 +1,10 @@
 # Identifying Competition between Emissions Mitigation and Carbon Dioxide Removal (CDR) in a Sector-Specific Context
-## Supplementary Information - Github Repository
+## Supplementary Information (SI) - Github Repository
 ### Authors: Feras Abdulla, Marianne Hatzopoulou, I. Daniel Posen
 
 This Github repository contains the master data sets used in our study, as well as the analyses carried out to identify and quantify competition between CDR and mitigation.
+
+Any questions or requests should be directed to Feras Abdulla (email: feras.abdulla@mail.utoronto.ca)
 
 The SI is divided into six primary folders, as follows:
 
@@ -48,9 +50,39 @@ E) Change in Emissions in Delayed Rollout: Similar to (D), this Python file gene
 
 
 ### 4. Database Intercomparison
-This folder compares results across all of the four databases.
+This folder presents the results of the analysis comparing all four databases. It groups emissions into shared parent categories common to all data sets, and then creates a scatterplot that tracks emissions and DAC sequestration. Besides some structural files and replicated databases, the main contents are:
 
-1) Final Analysis: 
+A) Final Analysis: This excel file collects data points for each of the four databases (each database tracked in its own worksheet). For each data set, sectoral emissions and DAC sequestration are tracked across all available scenarios (each scenario is one data point) in 5-year intervals from 2030 to 2050 (Trottier in 10-year intervals).
+
+B) Final Scatterplot: This Python file generates a scatterplot that tracks emissions (or sequestration) for the DAC, Transportation, Buildings, Industry, Agriculture & Waste, Oil & Gas, and Utilities/Electricity sectors from 2030 to 2050 in 5-year intervals. It is fed data from the Final Analysis Excel file. The final product is the image file *"Final Scatterplot.png"*.
+
+
+### 5. Global Competition Dynamics
+This folder filters, wrangles, and visualizes scenarios across multiple national spatial contexts based on data from IIASA's CD-Links database. The contents include:
+
+A) AR6 Country Database: The master CD-Links database covering data at the national spatial context.
+
+B) natural_earth: This open-source data was downloaded to provide .shp files necessary to generate geospatial figures on Python. This folder contains structural files to provide the framework for a world map.
+
+C) IIASA Global Data Filtering and Exploration: This Python file executes some basic data exploration and filters some of the contents of the master CD-Links database. It highlights the granularity/data-richness for each region and the number of variables tracked. It also filters out data-poor countries, retains only controlled rows that can be used to monitor sectoral emissions and sequestration, and identifies the number of unique models, scenarios, regions, and variables. Finally, it splits the data by country and generates new files unique to each remaining national spatial context.
+
+D) Separate Countries: This folder contains the country-specific files generated at the end of the python file *"IIASA Global Data Filtering and Exploration.ipynb"*.
+
+E) IIASA Global Data Analysis: This is the primary Python file for the global analysis. It:
+  I. Standardizes all emissions into units of Mt CO2 equivalents per year (and saves new country files with updated units - see Separate Countries Updated Units below) 
+  II. Creates scatterplots of sequestration for each country by CDR technology and year
+  III. Calculates and tracks country-specific average sequestration by CDR technology
+  IV. Visualizes total average sequestration by CDR technology and year across our *'universe'* of countries in a stacked area chart (as presented in the final paper)
+  V. Creates line graphs of total sequestration by country (summing all CDR technology types)
+  VI. Creates a world map of average sequestration capacity by country in 2050
+  VII. Maps total sequestration trends for all available IAM-scenario pairings by year and country
+  VIII. Creates bar charts that depict emissions differentials per unit of added sequestration for each country in 2050 (i.e., sectoral emissions impacts of added CDR           capacity)
+  IX. Creates a world map where each country is highlighted based on the sector belonging to that country where CDR competes most with mitigation in 2050
+
+F) Separate Countries Updated Units: This folder contains country-specific files where emissions have been standardized into units of Mt CO2 equivalents / year. This was done in the *"IIASA Global Data Analysis"* Python code.
+
+G) Radial Bar Chart: This excel file creates a radial bar chart that serves as a frequency analysis, counting the number of times certain sectors (transportation, industry, buildings, agriculture) recur as the sector where CDR competes the most with mitigation across our *'universe'* of 19 national spatial contexts. 
+
 
 
 
