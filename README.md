@@ -14,7 +14,7 @@ This folder contains the complete master data sets for the emissions data or sce
 
 
 ### 1. Identifying Competition
-This folder contains an analysis of changes to sectoral emissions associated with increases to CDR deployment levels:
+This folder contains an analysis of changes to sectoral emissions associated with increases to CDR deployment levels. The final published results are combined and can be found under 'Final Published Results/Navius-Trottier Image'. Some of the other contents include:
 
 A) Navius: The Navius folder contains subfolders corresponding to each of 2035, 2040, 2045, and 2050. Each subfolder contains some structural python files that divide and visualize the data into boxplots that depict the range of potential emissions increases for each sector (associated with a corresponding increase in DAC deployment). The primary python files that generate the box and whiskers plots in each subfolder are titled *"Navius **YEAR** - All sectors.ipynb"*. The data for 2050 is presented in the paper, so the 2050 subfolder contains another python file, *"Navius 2050 - Primary 4 Sectors.ipynb"*, that creates a more refined, summarized plot of the four Canadian sectors most influenced by increased DAC deployment. Furthermore, it contains another file, *"Navius Trottier Side-by-Side Subplots.ipynb"*, that graphs the Navius data across from the Trottier data, as presented in the paper. Outside of the subfolders, and under the main Navius folder, images exist of the raw, complete results (also in box-and-whiskers format) for each of the years.
 
@@ -48,7 +48,7 @@ D) Absolute Emissions - 2035 vs 2040 Rollouts: This Python file generates stacke
 
 E) Change in Emissions in Delayed Rollout: This Python file generates a bar chart that tracks the difference in sectoral emissions between a 2035 and a 2040 DAC rollout for each of 2035, 2040, 2045, and 2050. Lower emissions in the case of a delayed rollout are represented as positive bars, whereas higher emissions in the case of a delayed rollout are represented as negative bars. The image file *"Emissions Differential by Rollout Year.png"* is the final product.
 
-F) The image file *"Percent Change in Sectoral Emissions - CDR Rollout Delay"* is a percentage change version of the absolute change figure presented in (E). This figure is published in the paper. 
+F) The image file *"Percent Change in Sectoral Emissions - CDR Rollout Delay.png"* is a percentage change version of the absolute change figure presented in (E). This figure is published in the paper. 
 
 
 ### 4. Database Intercomparison
