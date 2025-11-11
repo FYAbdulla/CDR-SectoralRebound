@@ -26,7 +26,7 @@ C) Trottier - Identifying Competition: This file extracts data from the Trottier
 ### 2. Quantifying Competition
 This folder contains an analysis of sectoral emissions changes per **unit** increase in CDR deployment. This is done primarily using the Navius data, but also examined using the CD-Links scenarios. The contents of the folders include:
 
-A) Navius Data: Contains emissions differentials between scenarios where DAC is on vs. off. These differentials are normalized by the amount of DAC deployed, to determine the change in emissions for each sector per unit of DAC increase.
+A) Navius Data - Final: Contains emissions differentials between scenarios where DAC is on vs. off. These differentials are normalized by the amount of DAC deployed, to determine the change in emissions for each sector per unit of DAC increase.
 
 B) Navius Sectoral DAC Impacts - Uncertainty Regions: This python file generates a figure of sectoral emissions changes per unit of increased DAC capacity. Since Navius exhibits a range of sectoral emissions associated with different underlying economic and technological variables, the results are presented as shaded areas/regions instead of line graphs. Each shaded region represents the potential emissions changes for that sector per unit of added CDR deployment. Two figures are generated:
   I. Full Sectoral DAC Impacts - Navius.png: Shaded regions of all sectors with available data
@@ -36,7 +36,7 @@ C) GCAM CD-Links Data: This file contains an analysis of emissions differentials
 
 
 ### 3. Impact of Delayed DAC Rollout
-This folder contains an analysis of how delaying a DAC rollout from 2035 to 2040 impacts the overall DAC capacity deployed and the emissions of different sectors, based on the Navius data. The contents include:
+This folder contains an analysis of how a delayed DAC rollout (from 2035 to 2040) is associated with changes to sectoral emissions and to the overall DAC capacity deployed, based on the Navius data. Besides some structural files, the contents include:
 
 A) Navius - Analysis 3: This file divides the Navius data into 2 subsets: scenarios with a 2035 DAC rollout and ones with a 2040 DAC rollout. It then tracks the minimum, maximum, and average sectoral emissions and DAC deployment across each of 2035, 2040, 2045, and 2050.  
 
@@ -44,48 +44,51 @@ B) Navius DAC Deployment Capacities by Year of Rollout: This Python file is fed 
 
 C) Navius Sectoral Facet Grid: This Python file generates a facet grid with 8 subplots, each corresponding to a different sector. In each subplot, emissions are tracked via line graphs in the case of both a 2035 and a 2040 DAC rollout. The image file *"Sectoral Emissions by DAC Deployment Year.png"* is the final product.
 
-D) Absolute Emissions - 2035 vs 2040 Rollouts: This Python file generates stacked bar charts that track absolute sectoral emissions in the years 2035, 2040, 2045, and 2050. Under each year, we have 2 bars: one corresponding to a 2035 DAC rollout and the other a 2040 DAC rollout. This figure allows us to identify emissions trends across time and between rollouts. The file generates one figure with all nine sectors, and another abridged figure with just the four sectors whose emissions are most clearly impacted by a delayed DAC rollout. The image files *"Bar Chart Final.png"* and *"Bar Chart - Abridged.png"* are the final products, with the abridged version presented in the final paper.
+D) Absolute Emissions - 2035 vs 2040 Rollouts: This Python file generates stacked bar charts that track absolute sectoral emissions in the years 2035, 2040, 2045, and 2050. Under each year, we have 2 bars: one corresponding to a 2035 DAC rollout and the other a 2040 DAC rollout. This figure allows us to identify emissions trends across time and between rollouts. The file generates one figure with all nine sectors, and another abridged figure with just the four sectors whose emissions are most clearly impacted by a delayed DAC rollout. The image files *"Bar Chart Final.png"* and *"Bar Chart - Abridged.png"* are the final products.
 
-E) Change in Emissions in Delayed Rollout: Similar to (D), this Python file generates a bar chart the tracks the difference in sectoral emissions between a 2035 and a 2040 DAC rollout for each of 2035, 2040, 2045, and 2050. Lower emissions in the case of a delayed rollout are represented as positive bars, whereas higher emissions in the case of a delayed rollout are represented as negative bars. The image file *"Emissions Differential by Rollout Year.png"* is the final product.
+E) Change in Emissions in Delayed Rollout: This Python file generates a bar chart that tracks the difference in sectoral emissions between a 2035 and a 2040 DAC rollout for each of 2035, 2040, 2045, and 2050. Lower emissions in the case of a delayed rollout are represented as positive bars, whereas higher emissions in the case of a delayed rollout are represented as negative bars. The image file *"Emissions Differential by Rollout Year.png"* is the final product.
+
+F) The image file *"Percent Change in Sectoral Emissions - CDR Rollout Delay"* is a percentage change version of the absolute change figure presented in (E). This figure is published in the paper. 
 
 
 ### 4. Database Intercomparison
-This folder presents the results of the analysis comparing all four databases. It groups emissions into shared parent categories common to all data sets, and then creates a scatterplot that tracks emissions and DAC sequestration. Besides some structural files and replicated databases, the main contents are:
+This folder presents the results of the analysis comparing multiple databases. It groups emissions into shared parent categories common to all data sets, and then creates a violin plot that tracks emissions and sequestration. Besides some structural files and replicated databases, the main contents are:
 
-A) Final Analysis: This excel file collects data points for each of the four databases (each database tracked in its own worksheet). For each data set, sectoral emissions and DAC sequestration are tracked across all available scenarios (each scenario is one data point) in 5-year intervals from 2030 to 2050 (Trottier in 10-year intervals).
+A) Inter-model Comparison Sectoral Mapping: This PPT slide provides a heplful hierarchy of the parent categories depicted in this analysis (in green), each mapped to the associated sub-categories for each model/database. For instance, the parent category "Agriculture & Waste" consisted of the sector 'Agriculture & Waste' in the case of Navius, the sectors 'Agriculture' + 'Waste & Others' in the case of CER, and the sectors 'Agriculture' + 'Fugitive Sources' + 'Waste' in the case of Trottier.  
 
-B) Final Scatterplot: This Python file generates a scatterplot that tracks emissions (or sequestration) for the DAC, Transportation, Buildings, Industry, Agriculture & Waste, Oil & Gas, and Utilities/Electricity sectors from 2030 to 2050 in 5-year intervals. It is fed data from the Final Analysis Excel file. The final product is the image file *"Final Scatterplot.png"*.
+B) Final Analysis: This excel file collects data points for each database, tracked in its own worksheet. For each data set, sectoral emissions and sequestration are tracked across all available scenarios (each scenario is one data point) in 5-year intervals from 2030 to 2050 (Trottier in 10-year intervals).
+
+C) Final Scatterplot: This Python file generates both a scatterplot and a violin plot that track emissions (or sequestration) for the DAC + LULUCF, Transportation, Buildings, Industry, Agriculture & Waste, Oil & Gas, and Utilities sectors from 2030 to 2050 in 5-year intervals. It is fed data from the Final Analysis Excel file. The final product presented in the paper is the image file *"Violin Plot - Crossmodel Comparison.png"*.
+
+D) CD-Links GCAM data + Results: This folder contains some Canada-specific, GCAM scenarios compiled from the CD-Links database. These represent a subset of the data extracted from CD-Links. The image 'Final Scatterplot.png' adds this subset of data to the intermodel comparison of Navius, CER, and Trottier.  
 
 
 ### 5. Global Competition Dynamics
-This folder filters, wrangles, and visualizes scenarios across multiple national spatial contexts based on data from IIASA's CD-Links database. The contents include:
+This folder analyzes and visualizes scenarios across multiple national spatial contexts based on data from IIASA's CD-Links database. The contents include:
 
 A) AR6 Country Database: The master CD-Links database covering data at the national spatial context.
 
 B) natural_earth: This open-source data was downloaded to provide .shp files necessary to generate geospatial figures on Python. This folder contains structural files to provide the framework for a world map.
 
-C) IIASA Global Data Filtering and Exploration: This Python file executes some basic data exploration and filters some of the contents of the master CD-Links database. It highlights the granularity/data-richness for each region and the number of variables tracked. It also filters out data-poor countries, retains only controlled rows that can be used to monitor sectoral emissions and sequestration, and identifies the number of unique models, scenarios, regions, and variables. Finally, it splits the data by country and generates new files unique to each remaining national spatial context.
+C) Separate Countries: This folder contains country-specific files generated after wrangling the original master dataset. It retains only data that can be used to monitor sectoral emissions and sequestration.
 
-D) Separate Countries: This folder contains the country-specific files generated at the end of the python file *"IIASA Global Data Filtering and Exploration.ipynb"*.
+D) Separate Countries Standardized Units: This folder contains country-specific files where emissions have been standardized into units of Mt CO2 equivalents / year.
 
-E) IIASA Global Data Analysis: This is the primary Python file for the global analysis. It:
-  I. Standardizes all emissions into units of Mt CO2 equivalents per year (and saves new country files with updated units - see Separate Countries Updated Units below) 
-  II. Creates scatterplots of sequestration for each country by CDR technology and year
-  III. Calculates and tracks country-specific average sequestration by CDR technology
-  IV. Visualizes total average sequestration by CDR technology and year across our *'universe'* of countries in a stacked area chart (as presented in the final paper)
-  V. Creates line graphs of total sequestration by country (summing all CDR technology types)
-  VI. Creates a world map of average sequestration capacity by country in 2050
-  VII. Maps total sequestration trends for all available IAM-scenario pairings by year and country
-  VIII. Creates bar charts that depict emissions differentials per unit of added sequestration for each country in 2050 (i.e., sectoral emissions impacts of added CDR           capacity)
-  IX. Creates a world map where each country is highlighted based on the sector belonging to that country where CDR competes most with mitigation in 2050
+E) Scatterplots: This folder contains country-specific scatterplots that map out sequestration scenarios by CDR technology and year.
 
-F) Separate Countries Updated Units: This folder contains country-specific files where emissions have been standardized into units of Mt CO2 equivalents / year. This was done in the *"IIASA Global Data Analysis"* Python code.
+F) Model-Scenario Pairings: This folder contains country-specific line graphs of total sequestration trends for all available IAM-scenario pairings by year. Each curve represents one unique model-scenario pairing.
 
-G) Radial Bar Chart: This excel file creates a radial bar chart that serves as a frequency analysis, counting the number of times certain sectors (transportation, industry, buildings, agriculture) recur as the sector where CDR competes the most with mitigation across our *'universe'* of 19 national spatial contexts. 
+G) Global Sequestration by Mode: This folder contains composite results that were pulled together from the core data, representing average total sequestration by CDR technology and year across our *'universe'* of countries. Both a line graph and a stacked area chart (as presented in the final paper) are given.
+
+H) 2050 Emissions Rebound: This folder contains country-specific bar charts that depict sectoral emissions rebound (i.e., emissions differentials per unit of added sequestration for each sector) for each country in 2050. The folder also contains a geospatial world map that highlights which sector exhibits the highest emissions rebound (or highest degree of substitution between mitigation and CDR) for our *'universe'* of countries. These results depict the emissions impacts of added CDR capacity. Note that sectoral rebound figures can be negative because there is no constraint that the high- or low-CDR scenarios being compared need to hit net zero by 2050 (i.e., the low-CDR scenario set may present different net emissions in 2050 than the high-CDR scenario set).  
 
 
+### 6. GDP and Job Impacts
+This folder presents sectoral, economic (GDP and labor) impacts of increased CDR reliance to reach net zero. The core data comes from the Navius database. Besides some replicated structural files, the contents include:
 
+A) Scenario GDP and Labor Data: This folder contains the original, sectoral GDP ('GDP by sector (CAD 2015).csv') and labor ('jobs by sector (thousand FTEs).csv') data extracted from the Navius database, that same economic data specifically for the CDR-disabled scenarios ('no_data_GDP.xlsx' and 'no_data_jobs.xlsx'), and for the CDR-enabled scenarios ('yes_data_GDP.xlsx' and 'yes_data_jobs.xlsx').
 
+B) Percentage GDP and Jobs Analysis: This excel file calculates the percentage changes in GDP and jobs for each scenario pair (CDR-enabled vs CDR-disabled) for each sector. It then calculates the minimum, Q1, median, Q3, and maximum percent changes by year and sector for both economic indicators. These figures are compiled into a final box-and-whiskers, as presented in the paper ('2050 Sectoral Economic Impacts of Increased CDR Reliance.png').
 
 
 
