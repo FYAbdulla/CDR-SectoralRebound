@@ -1,16 +1,16 @@
 # Identifying Competition between Emissions Mitigation and Carbon Dioxide Removal (CDR) in a Sector-Specific Context
 ## Supplementary Information (SI) - Github Repository
-### Authors: Feras Abdulla, Marianne Hatzopoulou, I. Daniel Posen
+### Authors: Feras Abdulla, Amirashkan Askari, Marianne Hatzopoulou, I. Daniel Posen
 
 This Github repository contains the master data sets used in our study, as well as the analyses carried out to identify and quantify competition between CDR and mitigation.
 
 Any questions or requests should be directed to Feras Abdulla (email: feras.abdulla@mail.utoronto.ca)
 
-The SI is divided into six primary folders, as follows:
+The SI is divided into seven primary folders, as follows:
 
 
 ### 0. Master Databases
-This folder contains the complete master data sets for the emissions data or scenarios extracted from each of the Canada Energy Regulator (CER), IIASA's CD-Links Scenario Explorer (also known as the AR6 Scenario Explorer - this contains data both specific to Canada and to other national spatial contexts), the Navius gTech-IESD model, and Trottier's Canadian Energy Outlook 2021: Horizon 2060 Report. The folder also contains the references for each of the four databases.
+This folder contains the complete master data sets for the emissions data or scenarios extracted from each of the Canada Energy Regulator (CER), IIASA's CD-Links Scenario Explorer (also known as the AR6 Scenario Explorer - this contains data both specific to Canada and to other national spatial contexts), the Navius gTech-IESD model, and Trottier's Canadian Energy Outlook 2021: Horizon 2060 Report. The folder also contains the references for each of the four databases, and a README file that provides an overview of the different data sources.
 
 
 ### 1. Identifying Competition
@@ -48,7 +48,9 @@ D) Absolute Emissions - 2035 vs 2040 Rollouts: This Python file generates stacke
 
 E) Change in Emissions in Delayed Rollout: This Python file generates a bar chart that tracks the difference in sectoral emissions between a 2035 and a 2040 DAC rollout for each of 2035, 2040, 2045, and 2050. Lower emissions in the case of a delayed rollout are represented as positive bars, whereas higher emissions in the case of a delayed rollout are represented as negative bars. The image file *"Emissions Differential by Rollout Year.png"* is the final product.
 
-F) The image file *"Percent Change in Sectoral Emissions - CDR Rollout Delay.png"* is a percentage change version of the absolute change figure presented in (E). This figure is published in the paper. 
+F) The image file *"Percent Change in Sectoral Emissions - CDR Rollout Delay.png"* is a percentage change version of the absolute change figure presented in (E).
+
+G) Discussion of Results: This text file provides a qualitative discussion of the trends and main findings from this CDR rollout timing analysis.
 
 
 ### 4. Database Intercomparison
@@ -61,6 +63,8 @@ B) Final Analysis: This excel file collects data points for each database, track
 C) Final Scatterplot: This Python file generates both a scatterplot and a violin plot that track emissions (or sequestration) for the DAC + LULUCF, Transportation, Buildings, Industry, Agriculture & Waste, Oil & Gas, and Utilities sectors from 2030 to 2050 in 5-year intervals. It is fed data from the Final Analysis Excel file. The final product presented in the paper is the image file *"Violin Plot - Crossmodel Comparison.png"*.
 
 D) CD-Links GCAM data + Results: This folder contains some Canada-specific, GCAM scenarios compiled from the CD-Links database. These represent a subset of the data extracted from CD-Links. The image 'Final Scatterplot.png' adds this subset of data to the intermodel comparison of Navius, CER, and Trottier.  
+
+E) Discussion of Results: This text file provides a qualitative discussion of the trends and main findings from this inter-model comparison analysis.
 
 
 ### 5. Global Competition Dynamics
@@ -78,7 +82,7 @@ E) Scatterplots: This folder contains country-specific scatterplots that map out
 
 F) Model-Scenario Pairings: This folder contains country-specific line graphs of total sequestration trends for all available IAM-scenario pairings by year. Each curve represents one unique model-scenario pairing.
 
-G) Global Sequestration by Mode: This folder contains composite results that were pulled together from the core data, representing average total sequestration by CDR technology and year across our *'universe'* of countries. Both a line graph and a stacked area chart (as presented in the final paper) are given.
+G) Global Sequestration by Mode: This folder contains composite results that were pulled together from the core data, representing average total sequestration by CDR technology and year across our *'universe'* of countries. Both a line graph and a stacked area chart (as presented in the final paper) are given, as well as a discussion of trends.
 
 H) 2050 Emissions Rebound: This folder contains country-specific bar charts that depict sectoral emissions rebound (i.e., emissions differentials per unit of added sequestration for each sector) for each country in 2050. The folder also contains a geospatial world map that highlights which sector exhibits the highest emissions rebound (or highest degree of substitution between mitigation and CDR) for our *'universe'* of countries. These results depict the emissions impacts of added CDR capacity. Note that sectoral rebound figures can be negative because there is no constraint that the high- or low-CDR scenarios being compared need to hit net zero by 2050 (i.e., the low-CDR scenario set may present different net emissions in 2050 than the high-CDR scenario set).  
 
