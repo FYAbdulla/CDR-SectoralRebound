@@ -10,7 +10,7 @@ The SI is divided into seven primary folders, as follows:
 
 
 ### 0. Master Databases
-This folder contains the complete master data sets for the emissions data or scenarios extracted from each of the Canada Energy Regulator (CER), IIASA's CD-Links Scenario Explorer (also known as the AR6 Scenario Explorer - this contains data both specific to Canada and to other national spatial contexts), the Navius gTech-IESD model, and Trottier's Canadian Energy Outlook 2021: Horizon 2060 Report. The folder also contains the references for each of the four databases, and a README file that provides an overview of the different data sources.
+This folder contains the complete master data sets for the emissions data or scenarios extracted from each of the Canada Energy Regulator (CER), IIASA's CD-Links Scenario Explorer (also known as the AR6 Scenario Explorer - this contains data both specific to Canada and to other national spatial contexts), the Navius gTech-IESD model, and Trottier's Canadian Energy Outlook 2021: Horizon 2060 Report. The folder also contains the references for each of the four databases, and a text file that provides an overview of the different data sources.
 
 
 ### 1. Identifying Competition
