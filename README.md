@@ -65,7 +65,7 @@ G) Discussion of Results: This text file provides a qualitative discussion of th
 ### 4. Database Intercomparison
 This folder presents the results of the analysis comparing multiple databases. It groups emissions into shared parent categories common to all data sets, and then creates a violin plot that tracks emissions and sequestration. Besides some structural files and replicated databases, the main contents are:
 
-A) Inter-model Comparison Sectoral Mapping: This PPT slide provides a heplful hierarchy of the parent categories depicted in this analysis (in green), each mapped to the associated sub-categories for each model/database. For instance, the parent category "Agriculture & Waste" consisted of the sector 'Agriculture & Waste' in the case of Navius, the sectors 'Agriculture' + 'Waste & Others' in the case of CER, and the sectors 'Agriculture' + 'Fugitive Sources' + 'Waste' in the case of Trottier.  
+A) Inter-model Comparison Sectoral Mapping: This PPT slide provides a helpful hierarchy of the parent categories depicted in this analysis (in green), each mapped to the associated sub-categories for each model/database. For instance, the parent category "Agriculture & Waste" consisted of the sector 'Agriculture & Waste' in the case of Navius, the sectors 'Agriculture' + 'Waste & Others' in the case of CER, and the sectors 'Agriculture' + 'Fugitive Sources' + 'Waste' in the case of Trottier.  
 
 B) Final Analysis: This excel file collects data points for each database, tracked in its own worksheet. For each data set, sectoral emissions and sequestration are tracked across all available scenarios (each scenario is one data point) in 5-year intervals from 2030 to 2050 (Trottier in 10-year intervals).
 
@@ -81,19 +81,23 @@ This folder analyzes and visualizes scenarios across multiple national spatial c
 
 A) AR6 Country Database: The master CD-Links database covering data at the national spatial context.
 
-B) natural_earth: This open-source data was downloaded to provide .shp files necessary to generate geospatial figures on Python. This folder contains structural files to provide the framework for a world map.
+B) IIASA Global Data Filtering and Exploration.ipynb: A Jupyter notebook that performs exploratory filtering of the CD-Links database, assessing regional data richness and variable availability to track (negative) emissions. It then exports separate country-level CSV files for subsequent analysis.
 
-C) Separate Countries: This folder contains country-specific files generated after wrangling the original master dataset. It retains only data that can be used to monitor sectoral emissions and sequestration.
+C) IIASA Global Data Analysis-Rev01.ipynb: A Jupyter notebook that analyzes the filtered CD-Links data by standardizing units, visualizing CDR deployment by technology, country, year, and model-scenario pairing, and tracking global sequestration patterns. It also quantifies 2050 sectoral emissions rebound by country and compares relative sectoral decarbonization under high- versus low-CDR scenarios using the Relative Emissions Differential (RED) metric. Associated scatterplots and figures are also presented.
 
-D) Separate Countries Standardized Units: This folder contains country-specific files where emissions have been standardized into units of Mt CO2 equivalents / year.
+D) natural_earth: This open-source data was downloaded to provide .shp files necessary to generate geospatial figures on Python. This folder contains structural files to provide the framework for a world map.
 
-E) Scatterplots: This folder contains country-specific scatterplots that map out sequestration scenarios by CDR technology and year.
+E) Separate Countries: This folder contains country-specific files generated after wrangling the original master dataset. It retains only data that can be used to monitor sectoral emissions and sequestration.
 
-F) Model-Scenario Pairings: This folder contains country-specific line graphs of total sequestration trends for all available IAM-scenario pairings by year. Each curve represents one unique model-scenario pairing.
+F) Separate Countries Standardized Units: This folder contains country-specific files where emissions have been standardized into units of Mt CO2 equivalents / year.
 
-G) Global Sequestration by Mode: This folder contains composite results that were pulled together from the core data, representing average total sequestration by CDR technology and year across our *'universe'* of countries. Both a line graph and a stacked area chart (as presented in the final paper) are given, as well as a discussion of trends.
+G) Scatterplots: This folder contains country-specific scatterplots that map out sequestration scenarios by CDR technology and year.
 
-H) 2050 Emissions Rebound: This folder contains country-specific bar charts that depict sectoral emissions rebound (i.e., emissions differentials per unit of added sequestration for each sector) for each country in 2050. The folder also contains a geospatial world map that highlights which sector exhibits the highest emissions rebound (or highest degree of substitution between mitigation and CDR) for our *'universe'* of countries. These results depict the emissions impacts of added CDR capacity. Note that sectoral rebound figures can be negative because there is no constraint that the high- or low-CDR scenarios being compared need to hit net zero by 2050 (i.e., the low-CDR scenario set may present different net emissions in 2050 than the high-CDR scenario set).  
+H) Model-Scenario Pairings: This folder contains country-specific line graphs of total sequestration trends for all available IAM-scenario pairings by year. Each curve represents one unique model-scenario pairing.
+
+I) Global Sequestration by Mode: This folder contains composite results that were pulled together from the core data, representing average total sequestration by CDR technology and year across our *'universe'* of countries. Both a line graph and a stacked area chart (as presented in the final paper) are given, as well as a discussion of trends.
+
+J) 2050 Emissions Rebound: This folder contains country-specific bar charts that depict sectoral emissions rebound (i.e., emissions differentials per unit of added sequestration for each sector) for each country in 2050. The folder also contains a geospatial world map that highlights which sector exhibits the highest emissions rebound (or highest degree of substitution between mitigation and CDR) for our *'universe'* of countries. These results depict the emissions impacts of added CDR capacity. Note that sectoral rebound figures can be negative because there is no constraint that the high- or low-CDR scenarios being compared need to hit net zero by 2050 (i.e., the low-CDR scenario set may present different net emissions in 2050 than the high-CDR scenario set).  
 
 
 ### 6. GDP and Job Impacts
